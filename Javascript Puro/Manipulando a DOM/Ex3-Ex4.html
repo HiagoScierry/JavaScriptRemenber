@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="nome">
+    <button onclick="addNewItem()">click</button>
+    <ul></ul>
+
+
+    <script>
+        
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.querySelector('ul')
+
+        for (name of nomes) {
+            addItemList(name)
+        }
+
+        function addItemList(name) {
+            var elementChild = document.createElement('li')
+            var text = document.createTextNode(name)
+            elementChild.appendChild(text)
+            listElement.appendChild(elementChild)
+        }
+
+        function addNewItem(){
+           var inputElement = document.getElementById('nome')
+           var value = inputElement.value
+           addItemList(value)
+           inputElement.value = ''
+            
+        }
+
+
+    </script>
+</body>
+
+</html>
